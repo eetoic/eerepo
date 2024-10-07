@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on eerepo</title>
+    <link>https://erepo.rth5.com/posts/</link>
+    <description>Recent content in Posts on eerepo</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 07 Oct 2024 18:23:04 +0800</lastBuildDate>
+    <atom:link href="https://erepo.rth5.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用cadence orcad capture搭建元器件库</title>
+      <link>https://erepo.rth5.com/posts/my-first-post/</link>
+      <pubDate>Mon, 07 Oct 2024 18:23:04 +0800</pubDate>
+      <guid>https://erepo.rth5.com/posts/my-first-post/</guid>
+      <description>&lt;h2 id=&#34;center认识元器件库center&#34;&gt;&lt;!-- raw HTML omitted --&gt;认识元器件库&lt;!-- raw HTML omitted --&gt;&lt;/h2&gt;
+&lt;p&gt;原理图是用来体现电子电路的工作原理的一种电路图。它直接体现了电子电路的结构和工作原理，详细绘制了电路的全部元器件和它们的连接方式，那么第一步就是要得到元器件，这些元器件都存在元器件库中，元器件库就是一个存储元器件的仓库。&lt;/p&gt;
+&lt;p&gt;cadence提供了官方元器件库，里面包含了我们常用到的元器件&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://erepo.rth5.com/image/cadence%E5%85%83%E5%99%A8%E4%BB%B6%E5%BA%93.png&#34; alt=&#34;cadence元器件库&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;按住快捷键P，可以唤出place part边框，如上图所示，在libraries处我们可以添加和删除元器件库，点击图中“+”图标会唤出文件夹窗口，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://erepo.rth5.com/image/image-20241007102641002.png&#34; alt=&#34;image-20241007102641002&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;元器件库的后缀是.olb，为了方便认识元器件库的用途，一般在命名上会写出元器件的英文名，如Amplifier.olb就是运算放大器的元器件库，打开该文件即可完成添加。&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://erepo.rth5.com/image/image-20241007103035648.png&#34; alt=&#34;image-20241007103035648&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;可以看到&lt;strong&gt;Libraries&lt;/strong&gt;里完成了AMPLIFIER的添加，在&lt;strong&gt;Part&lt;/strong&gt;里便能看到该库里的具体元器件型号，点击&lt;strong&gt;Part&lt;/strong&gt;里元器件，用鼠标下滑寻找元器件，当然也可以在&lt;strong&gt;Par&lt;/strong&gt;里搜索，如果库里有想要的元器件，找到后双击便能添加到原理图页面了。&lt;/p&gt;
+&lt;h2 id=&#34;center制作元器件库center&#34;&gt;&lt;!-- raw HTML omitted --&gt;制作元器件库&lt;!-- raw HTML omitted --&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;新建一个元器件库&#34;&gt;新建一个元器件库&lt;/h3&gt;
+&lt;p&gt;元器件库添加步骤：
+1.左键点击该项目，确保我们要添加的元器件库放在这个项目里
+2.添加元器件库：File-&amp;gt;New-&amp;gt;Library，可以看到库已经添加到项目里
+3.右击该库，save一下，可以选择Library的添加位置，同时还能够重命名
+4.右击该库，点击&lt;strong&gt;new part&lt;/strong&gt;添加元器件,会唤出属性框如下图所示
+&lt;img loading=&#34;lazy&#34; src=&#34;https://erepo.rth5.com/image/image-20241007105523246.png&#34; alt=&#34;image-20241007105523246&#34;  /&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;元器件制作&#34;&gt;元器件制作&lt;/h3&gt;
+&lt;p&gt;Name是元器件名字，part reference是元器件编号，例如电阻编号R1,R2等，PCB Footprint是PCB封装，对于封装确定的我们可以提前写好名字，如果封装不确定可以后面再添加，比如电阻有0603 0402 0805等封装，根据电路情况使用不同封装。&lt;/p&gt;
+&lt;p&gt;Create Convert View为同一个零件创建另一种图形表示方式，这种功能允许设计者为同一零件提供多种视觉表现形式，而不改变零件的基本属性或功能。常用的地方是芯片周围有电阻电容时我们可以选择大小小一些的，方便放置，效果如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://erepo.rth5.com/image/image-20241007113952905.png&#34; alt=&#34;image-20241007113952905&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Multiple-Part Package是指一个元件包含多个部分(Parts)的封装类型。这种设计方式在创建复杂元件时非常有用，特别是对于大型集成电路(IC)或多功能器件，允许在一个元件符号中定义多个功能部分或子单元。每个部分可以独立绘制和使用，但它们属于同一个物理封装。在Cadence OrCAD中创建Multiple-Part Package时：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在&amp;quot;New Part&amp;quot;对话框中，设置&amp;quot;Parts per &amp;ldquo;为大于1的值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择&amp;quot;Package Type&amp;quot;为&amp;quot;Homogeneous&amp;rdquo;（同质）或&amp;quot;Heterogeneous&amp;quot;（异质）。Homogeneous：所有部分相同，只需绘制一个部分。Heterogeneous：各部分不同，需分别绘制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择&amp;quot;Part Numbering&amp;quot;为&amp;quot;Alphabetic&amp;quot;（字母）或&amp;quot;Numeric&amp;quot;（数字），一般选择字母，比如U4A、U4B都属于U4，其中A、B就是Part Numbering，如下图所示：
+&lt;img loading=&#34;lazy&#34; src=&#34;https://erepo.rth5.com/image/image-20241007122658214.png&#34; alt=&#34;image-20241007122658214&#34;  /&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上图的Package Type是同质，Parts per为2&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;使用&amp;quot;View -&amp;gt; Next Part&amp;quot;或快捷键(Ctrl + N)在不同部分间切换。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Part Aliases&lt;/strong&gt;（零件别名）是一种为零件或元件创建替代名称的功能。比如对于NPN晶体管，我有好几种NPN产品，产品命名不同，但是原理图都是一个画法，那么我就能用part aliases将产品名字都写出来，这些产品的原理图就都是它了，不需要每个产品都画一遍。Part aliases在以下情况下特别有用：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

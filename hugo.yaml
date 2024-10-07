@@ -1,0 +1,4 @@
+baseURL: https://erepo.rth5.com/
+languageCode: zh-cn
+title: eerepo
+theme: ["PaperMod"]
