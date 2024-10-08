@@ -9,22 +9,11 @@ jobs:
       image: shangzheny/rth-host-helper:latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16' # 或者您需要的 Node.js 版本
-
-      - name: Install dependencies
-        run: npm install
-
       - name: Deploy to Retinbox Web Hosting
         uses: rthsoftware/host-auto-deploy@master
         env:
           RTH_API_KEY: ${{ secrets.RTH_API_KEY }}
         with:
-          site: "erepo"
-          build: "hugo --minify"
-          outdir: "./public"
+          site: "erepo"  # 修改 example 为您的网站名称
+          build: "build"  # 修改 build 为您的构建命令
+          outdir: "public"  # 修改 dist 为您的构建输出目录
